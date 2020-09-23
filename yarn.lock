@@ -10020,6 +10020,11 @@ recast@~0.18.5:
     private "^0.1.8"
     source-map "~0.6.1"
 
+recoil@0.0.12:
+  version "0.0.12"
+  resolved "https://registry.yarnpkg.com/recoil/-/recoil-0.0.12.tgz#1f0cf8609ab8fed19664a377efe3d27fab484a67"
+  integrity sha512-RIJXLGu+ximiU0Y5K0MC7MENnW/9ddQ3cPEFEvpDQXmhSGEgoMkxW/ic56LKtHDINFPit9gaxGOhEmv0mTHfTQ==
+
 recursive-readdir@2.2.2:
   version "2.2.2"
   resolved "https://registry.yarnpkg.com/recursive-readdir/-/recursive-readdir-2.2.2.tgz#9946fb3274e1628de6e36b2f6714953b4845094f"

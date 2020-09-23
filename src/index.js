@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import { RecoilRoot } from "recoil";
+
 import "./index.css";
 import App from "./App";
 import WithChakraUI from "./WithChakraUI";
@@ -9,7 +11,9 @@ import * as serviceWorker from "./serviceWorker";
 ReactDOM.render(
   <React.StrictMode>
     <WithChakraUI>
-      <App />
+      <RecoilRoot>
+        <App />
+      </RecoilRoot>
     </WithChakraUI>
   </React.StrictMode>,
   document.getElementById("root")
