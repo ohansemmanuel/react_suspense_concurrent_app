@@ -1,10 +1,12 @@
 import React from "react";
-// import { useRecoilValueLoadable } from "recoil";
-// import { userDetails } from "./state/userDetails";
 import { CardList } from "./components";
 
-function UserList({ user }) {
-  return <CardList>{user.name}</CardList>;
+function UserList({ name, user, isLoading }) {
+  return (
+    <CardList details={user} isLoading={isLoading}>
+      {name}
+    </CardList>
+  );
 }
 
 export default UserList;

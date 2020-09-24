@@ -1,4 +1,4 @@
-import { selector, selectorFamily, waitForAll } from "recoil";
+import { selector, selectorFamily, waitForNone } from "recoil";
 import { userNames } from "./userNames";
 import { getUserDetails } from "../api/getUserDetails";
 
@@ -14,9 +14,9 @@ export const userDetails = selector({
   key: "userDetails",
   get: ({ get }) => {
     const userList = get(userNames);
-    const userDetailsList = get(
-      waitForAll(userList.map(({ id }) => userDetailQuery(id)))
+    const userDetailsListLoadable = get(
+      waitForNone(userList.map(({ id }) => userDetailQuery(id)))
     );
-    return userDetailsList;
+    return userDetailsListLoadable;
   },
 });

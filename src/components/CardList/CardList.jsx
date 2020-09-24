@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { opacify } from "polished";
-import { Stack, Box, Spinner, Text } from "@chakra-ui/core";
+import {
+  Stack,
+  Box,
+  Spinner,
+  Text,
+  Collapse,
+  Skeleton,
+  Code,
+} from "@chakra-ui/core";
 
 /**
  *
@@ -11,8 +19,13 @@ export const CardList = ({
   isLoading = false,
   style: userStyles = {},
   children,
+  details,
   ...restProps
 }) => {
+  const [showDetails, setShowDetails] = useState(false);
+  const toggleDetails = () => setShowDetails((val) => !val);
+  const variantColor = ["red", "yellow", "purple", "blue", "pink"];
+
   return (
     <Box
       bg={isLoading ? opacify(0.1, bg) : bg}
@@ -24,10 +37,29 @@ export const CardList = ({
       as="li"
       rounded="lg"
       style={{ listStyle: "none", cursor: "pointer", ...userStyles }}
+      onClick={toggleDetails}
       {...restProps}
     >
-      <Stack isInline spacing={4}>
+      <Stack>
         <Text>{children}</Text>
+        <Collapse mt={4} isOpen={showDetails}>
+          {isLoading ? (
+            <>
+              <Skeleton height="20px" my="10px" />
+              <Skeleton height="20px" my="10px" />
+              <Skeleton height="20px" my="10px" />
+            </>
+          ) : (
+            <Code>
+              {Object.keys(details).map((objKey, index) => (
+                <Code
+                  my={2}
+                  variantColor={variantColor[index]}
+                >{`${objKey}: ${details[objKey]}`}</Code>
+              ))}
+            </Code>
+          )}
+        </Collapse>
         {isLoading && <Spinner size="xs" marginLeft="auto" />}
       </Stack>
     </Box>

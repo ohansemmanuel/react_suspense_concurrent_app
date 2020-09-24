@@ -1,7 +1,7 @@
 import { URL } from "./url";
 
 /**
- * @param id string
+ * @param {string} id
  * @returns Promise<{
     name: string,
     bio:
