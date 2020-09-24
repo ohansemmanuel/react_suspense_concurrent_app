@@ -1,19 +1,17 @@
-### 🦉Default
+### 🦉 Default Card
 
 ```js
 <Card>This is a card</Card>
 ```
 
-### 🧚With different background
+### 🍭 Card with different background
 
 ```js
-<Card bg="aqua">This is another card</Card>
+<Card bg="#8cacea">This is a card with a custom background</Card>
 ```
 
-### Loading
+### 🎒 Loading Card
 
 ```js
-<Card bg="teal" isLoading>
-  This is another card
-</Card>
+<Card isLoading>This is a loading card. Click to see loading skeleton</Card>
 ```

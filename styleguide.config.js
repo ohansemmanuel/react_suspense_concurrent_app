@@ -2,7 +2,7 @@
 const path = require("path");
 
 module.exports = {
-  components: "src/components/**/*.{js,jsx,ts,tsx}",
+  components: "src/components/**/[A-Z]*.jsx",
   styleguideComponents: {
     Wrapper: path.join(__dirname, "src/WithChakraUI.js"),
   },

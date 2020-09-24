@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { opacify } from "polished";
 import {
   Stack,
   Box,
@@ -15,20 +14,21 @@ import {
  * @param {bg} backgroundColor
  */
 export const CardList = ({
-  bg = "honeydew",
+  bg = "#9543A7",
   isLoading = false,
   style: userStyles = {},
   children,
-  details,
+  details = {},
   ...restProps
 }) => {
   const [showDetails, setShowDetails] = useState(false);
   const toggleDetails = () => setShowDetails((val) => !val);
-  const variantColor = ["red", "yellow", "purple", "blue", "pink"];
+
+  const variantColor = ["red", "yellow", "purple", "blue", "green", "orange"];
 
   return (
     <Box
-      bg={isLoading ? opacify(0.1, bg) : bg}
+      bg={!!showDetails ? "#E350A8" : bg}
       w={"100%"}
       p={4}
       my={3}
@@ -41,7 +41,14 @@ export const CardList = ({
       {...restProps}
     >
       <Stack>
-        <Text>{children}</Text>
+        <Box d="flex">
+          {isLoading && (
+            <Spinner size="xs" mr={2} opacity={0.75} color="#fff" />
+          )}
+          <Text fontWeight={showDetails ? "bold" : "normal"} color="#fff">
+            {children}
+          </Text>
+        </Box>
         <Collapse mt={4} isOpen={showDetails}>
           {isLoading ? (
             <>
@@ -50,17 +57,18 @@ export const CardList = ({
               <Skeleton height="20px" my="10px" />
             </>
           ) : (
-            <Code>
+            <Stack>
               {Object.keys(details).map((objKey, index) => (
-                <Code
-                  my={2}
-                  variantColor={variantColor[index]}
-                >{`${objKey}: ${details[objKey]}`}</Code>
+                <Box w={"100%"}>
+                  <Code
+                    my={2}
+                    variantColor={variantColor[index]}
+                  >{`${objKey}: ${details[objKey]}`}</Code>
+                </Box>
               ))}
-            </Code>
+            </Stack>
           )}
         </Collapse>
-        {isLoading && <Spinner size="xs" marginLeft="auto" />}
       </Stack>
     </Box>
   );

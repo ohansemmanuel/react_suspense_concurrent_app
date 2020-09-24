@@ -7,7 +7,7 @@ import { Box } from "@chakra-ui/core";
  * @param {bg} backgroundColor
  */
 export const Card = ({
-  bg = "lightblue",
+  bg = "#4A26AB",
   isLoading = false,
   children,
   ...restProps
@@ -15,12 +15,15 @@ export const Card = ({
   return (
     <Box
       bg={bg}
-      w={1 / 2}
-      p={4}
       minH={400}
       rounded="lg"
       as="ul"
-      color="gray.600"
+      color="#fff"
+      zIndex={20}
+      width={[
+        "100%", // base
+        "50%", // 480px upwards
+      ]}
     >
       <Skeleton
         isLoaded={!isLoading}
@@ -30,7 +33,7 @@ export const Card = ({
         speed={0.8}
         {...restProps}
       >
-        {children}
+        <Box p={4}>{children}</Box>
       </Skeleton>
     </Box>
   );

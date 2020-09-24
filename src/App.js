@@ -31,7 +31,7 @@ function App() {
             key={index}
             isLoading={state === "loading"}
             user={state === "loading" ? null : contents}
-            name={userNameList[index].name}
+            name={`${index + 1}. ${userNameList[index].name}`}
           />
         ))}
     </Card>
