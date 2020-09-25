@@ -14,9 +14,6 @@ export const userDetails = selector({
   key: "userDetails",
   get: ({ get }) => {
     const userList = get(userNames);
-    const userDetailsListLoadable = get(
-      waitForNone(userList.map(({ id }) => userDetailQuery(id)))
-    );
-    return userDetailsListLoadable;
+    return get(waitForNone(userList.map(({ id }) => userDetailQuery(id))));
   },
 });

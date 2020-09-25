@@ -8,30 +8,18 @@ import { userDetails } from "./state/userDetails";
 import UserList from "./UserList";
 
 function App() {
-  const {
-    contents: userNameList,
-    state: userNamesLoadableState,
-  } = useRecoilValueLoadable(userNames);
-
-  const {
-    state: userDetailsQueryState,
-    contents: userDetailsLoadable,
-  } = useRecoilValueLoadable(userDetails);
-
-  // initial fetch for user names
-  const isLoadingUserNames = userNamesLoadableState === "loading";
-  // loadable ready?
-  const loadableReady = userDetailsQueryState === "hasValue";
+  const userNamesLoadable = useRecoilValueLoadable(userNames);
+  const userDetailsLoadable = useRecoilValueLoadable(userDetails);
 
   return (
-    <Card isLoading={isLoadingUserNames}>
-      {loadableReady &&
-        userDetailsLoadable.map(({ state, contents }, index) => (
+    <Card isLoading={userNamesLoadable.state === "loading"}>
+      {userDetailsLoadable.state === "hasValue" &&
+        userDetailsLoadable.contents.map(({ state, contents }, i) => (
           <UserList
-            key={index}
+            key={i}
             isLoading={state === "loading"}
             user={state === "loading" ? null : contents}
-            name={`${index + 1}. ${userNameList[index].name}`}
+            name={`${i + 1}. ${userNamesLoadable.contents[i].name}`}
           />
         ))}
     </Card>
