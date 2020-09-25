@@ -1,5 +1,3 @@
-import { URL } from "./url";
-
 /**
  * @param {string} id
  * @returns Promise<{
@@ -13,4 +11,4 @@ import { URL } from "./url";
   }>
  */
 export const getUserDetails = async (id) =>
-  await fetch(`${URL}${id}`).then((res) => res.json());
+  await fetch(`/users/${id}`).then((res) => res.json());
