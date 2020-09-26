@@ -104,6 +104,8 @@ Here's what my final solution looks like:
 
 ![https://i.imgur.com/OIODDbT.gif](https://i.imgur.com/OIODDbT.gif)
 
+<br />
+
 ## API requests/Server details
 
 See the `/api` directory for api query functions `getUserNames` and `getUserDetails`. These point to the `/users` and `/users/${userId}` respectively.
