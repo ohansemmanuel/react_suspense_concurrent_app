@@ -1,11 +1,9 @@
 import React from "react";
 import { useRecoilValueLoadable } from "recoil";
 
-import { Card } from "./components";
+import { Card, CardList } from "./components";
 import { userNames } from "./state/userNames";
 import { userDetails } from "./state/userDetails";
-
-import UserList from "./UserList";
 
 function App() {
   const userNamesLoadable = useRecoilValueLoadable(userNames);
@@ -15,12 +13,13 @@ function App() {
     <Card isLoading={userNamesLoadable.state === "loading"}>
       {userDetailsLoadable.state === "hasValue" &&
         userDetailsLoadable.contents.map(({ state, contents }, i) => (
-          <UserList
+          <CardList
             key={i}
             isLoading={state === "loading"}
-            user={state === "loading" ? null : contents}
-            name={`${i + 1}. ${userNamesLoadable.contents[i].name}`}
-          />
+            details={state === "loading" ? null : contents}
+          >
+            {`${i + 1}. ${userNamesLoadable.contents[i].name}`}
+          </CardList>
         ))}
     </Card>
   );
