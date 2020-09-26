@@ -66,11 +66,7 @@ To make the challenge focused on logic, UI components have been built for you. T
 npx yarn start:dev
 ```
 
-Point your browser to `http://localhost:6060/`. You should see the following:
-
-<br />
-
-![https://i.imgur.com/hFp7okw.gif](https://i.imgur.com/hFp7okw.gif)
+Point your browser to `http://localhost:6060/`. You should have a React [Styleguidist](https://react-styleguidist.js.org/) server running. Inspect the components and live editable code.
 
 <br />
 
