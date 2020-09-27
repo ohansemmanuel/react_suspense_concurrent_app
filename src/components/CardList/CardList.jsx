@@ -11,7 +11,8 @@ import {
 
 /**
  *
- * @param {bg} backgroundColor
+ * @param {string} backgroundColor
+ * @param {object} details
  */
 export const CardList = ({
   bg = "#9543A7",
