@@ -16,7 +16,7 @@ With suspense we can do the following:
 
 Essentially, you start rendering pretty much immediately after kicking off the network request.
 
-[See docs]()
+[See docs](https://reactjs.org/docs/concurrent-mode-suspense.html#approach-3-render-as-you-fetch-using-suspensez)
 
 <br />
 
