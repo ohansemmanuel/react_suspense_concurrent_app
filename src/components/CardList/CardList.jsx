@@ -60,7 +60,7 @@ export const CardList = ({
           ) : (
             <Stack>
               {Object.keys(details).map((objKey, index) => (
-                <Box w={"100%"}>
+                <Box w={"100%"} key={index}>
                   <Code
                     my={2}
                     variantColor={variantColor[index]}
