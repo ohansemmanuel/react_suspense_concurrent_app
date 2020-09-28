@@ -4,12 +4,9 @@ import { getUserDetails } from "../api/getUserDetails";
 
 const userDetailQuery = selectorFamily({
   key: "userDetailQuery",
-  get: (id) => async ({ get }) => await getUserDetails(id),
+  get: (id) => async () => await getUserDetails(id),
 });
 
-/**
- *  @returns Array<{id: string, name: string}>
- */
 export const userDetails = selector({
   key: "userDetails",
   get: ({ get }) => {

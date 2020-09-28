@@ -13,11 +13,7 @@ function App() {
     <Card isLoading={userNamesLoadable.state === "loading"}>
       {userDetailsLoadable.state === "hasValue" &&
         userDetailsLoadable.contents.map(({ state, contents }, i) => (
-          <CardList
-            key={i}
-            isLoading={state === "loading"}
-            details={state === "loading" ? null : contents}
-          >
+          <CardList key={i} isLoading={state === "loading"} details={contents}>
             {`${i + 1}. ${userNamesLoadable.contents[i].name}`}
           </CardList>
         ))}
