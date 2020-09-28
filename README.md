@@ -1,5 +1,7 @@
 # Render as you fetch
 
+![https://i.imgur.com/0y5iDgE.gif](https://i.imgur.com/0y5iDgE.gif)
+
 Render-as-you-fetch simply refers to not blocking the UI rendering while fetching data. In traditional approaches, we did this:
 
 1. Start fetching data
@@ -20,7 +22,7 @@ Essentially, you start rendering pretty much immediately after kicking off the n
 
 ## Goal
 
-The goal here is to take a sample project and implement the render as you fetch pattern .Sounds simple? Don't get cocky yet, huh? 😉
+The goal here is to take a sample project and implement the render as you fetch pattern. Sounds simple? Don't get cocky yet, huh? 😉
 
 Read on!
 
