@@ -157,3 +157,7 @@ visit http://localhost:3001/
 | /             |     default user details      |
 | /users        | list of user names (with IDs) |
 | /users/\${id} |     specific user details     |
+
+## Challenge Solution
+
+- See branch 'recoil' for recoil solution
