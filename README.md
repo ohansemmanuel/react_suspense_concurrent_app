@@ -107,7 +107,7 @@ Make sure the UI is incrementally updated for each user detail request
 
 Here's what a working solution looks like:
 
-![https://i.imgur.com/OIODDbT.gif](https://i.imgur.com/OIODDbT.gif)
+![https://i.imgur.com/P9YVQqJ.gif](https://i.imgur.com/P9YVQqJ.gif)
 
 <br />
 
